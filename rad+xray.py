@@ -5,8 +5,9 @@ import subprocess
 def main(data1):
 	target = data1
 	cmd = ["./rad.exe","-t",target,"-http-proxy","127.0.0.1:7777"]
-	rsp=subprocess.check_output(cmd)
-	print(rsp)
+	rsp=subprocess.Popen(cmd)
+	output, error = rsp.communicate()
+	print(output)
 
 
 if __name__=='__main__':
