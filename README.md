@@ -19,6 +19,8 @@ python3 rad+xray.py
 
 url一行一个放url.txt中
 
-browserscan.py和xray放同一文件夹
+browserscan.py和xray.exe和rad.exe放同一文件夹
+
+运行py:
 
 python3 browserscan.py
