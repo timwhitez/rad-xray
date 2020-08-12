@@ -1,7 +1,9 @@
 # rad-xray
-xray社区版用户使用rad批量主动扫描
+xray+rad批量主动扫描
 
-Usage: 
+## Usage: 
+
+## 社区版用户
 
 url一行一个放url.txt中，和rad放同文件夹
 
@@ -12,3 +14,11 @@ xray开启监听，
 运行py
 
 python3 rad+xray.py
+
+## 高级版用户
+
+url一行一个放url.txt中
+
+browserscan.py和xray放同一文件夹
+
+python3 browserscan.py
