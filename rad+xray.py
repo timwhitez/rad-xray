@@ -8,9 +8,10 @@ import time
 def main(data1):
 	target = data1
 	print(target + " Start Crawling")
-	cmd = ["./rad","-t",target,"-http-proxy","127.0.0.1:7777"]
+	cmd = ["./rad","-t",target,"--auto-index", "--http-proxy", "127.0.0.1:7777", "--no-banner"]
 	try:
 		output = subprocess.check_output(cmd, timeout=3600)
+		print(output)
 	except:
 		return
 
