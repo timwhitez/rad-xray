@@ -11,7 +11,7 @@ def main(data1):
 	cmd = ["./rad","-t",target,"--auto-index", "--http-proxy", "127.0.0.1:7777", "--no-banner"]
 	try:
 		output = subprocess.check_output(cmd, timeout=3600)
-		print(output)
+		print(output.decode("utf-8") )
 	except:
 		return
 
