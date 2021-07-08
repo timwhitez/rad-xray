@@ -8,10 +8,9 @@ import time
 def main(data1):
 	target = data1
 	print(target + " Start Crawling")
-	cmd = ["./rad","-t",target,"-http-proxy","127.0.0.1:1080"]
+	cmd = ["./rad","-t",target,"-http-proxy","127.0.0.1:7777"]
 	try:
 		output = subprocess.check_output(cmd, timeout=3600)
-		#print(output)
 	except:
 		return
 
@@ -22,7 +21,7 @@ if __name__=='__main__':
 		data1=text.strip('\n')
 		main(data1)
 		print(data1 + " Finish")
-		time.sleep(30)
+		time.sleep(10)
 		sysstr = platform.system()
 		if(sysstr =="Windows"):
 			os.system("taskkill /f /IM chrome*")
