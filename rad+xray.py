@@ -11,10 +11,10 @@ def main(data1):
 	cmd = ["./rad","-t",target,"--auto-index", "--http-proxy", "127.0.0.1:7777", "--no-banner"]
 	try:
 		output = subprocess.check_output(cmd, timeout=3600)
-		print(output.decode("utf-8") )
-	except:
+		print(output.decode("utf-8"))
+	except Exception as e:
+		print(e)
 		return
-
 
 if __name__=='__main__':
 	file = open("url.txt")
