@@ -17,13 +17,13 @@ def main(data1):
 		return
 
 if __name__=='__main__':
+	sysstr = platform.system()
 	file = open("url.txt")
 	for text in file.readlines():
 		data1=text.strip('\n')
 		main(data1)
 		print(data1 + " Finish")
 		time.sleep(10)
-		sysstr = platform.system()
 		if(sysstr =="Windows"):
 			os.system("taskkill /f /IM chrome*")
 		elif(sysstr =="Linux"):
