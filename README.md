@@ -15,6 +15,8 @@ xray开启监听，
 
 python3 rad+xray.py
 
+注意：单个任务结束后会kill所有的chrome进程
+
 ## 高级版用户
 
 url一行一个放url.txt中
