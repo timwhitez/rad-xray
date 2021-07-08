@@ -3,11 +3,12 @@
 import subprocess
 import platform
 import os
+import time
 
 def main(data1):
 	target = data1
-	print(target + "crawling")
-	cmd = ["./rad","-t",target,"-http-proxy","127.0.0.1:7777"]
+	print(target + " Start Crawling")
+	cmd = ["./rad","-t",target,"-http-proxy","127.0.0.1:1080"]
 	try:
 		output = subprocess.check_output(cmd, timeout=3600)
 		#print(output)
@@ -20,10 +21,10 @@ if __name__=='__main__':
 	for text in file.readlines():
 		data1=text.strip('\n')
 		main(data1)
-		print(data1 + "finish")
+		print(data1 + " Finish")
 		time.sleep(30)
 		sysstr = platform.system()
 		if(sysstr =="Windows"):
-			os.system("taskkill /f /IM chrome.exe")
+			os.system("taskkill /f /IM chrome*")
 		elif(sysstr =="Linux"):
 			os.system("ps aux | awk '/chrome/ { print $2 } ' | xargs kill -9")
