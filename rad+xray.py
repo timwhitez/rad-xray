@@ -13,7 +13,7 @@ def main(data1):
 		output = subprocess.check_output(cmd, timeout=3600)
 		print(output.decode("utf-8"))
 	except Exception as e:
-		print(e)
+		#print(e)
 		return
 
 if __name__=='__main__':
@@ -24,7 +24,11 @@ if __name__=='__main__':
 		main(data1)
 		print(data1 + " Finish")
 		time.sleep(10)
-		if(sysstr =="Windows"):
-			os.system("taskkill /f /IM chrome*")
-		elif(sysstr =="Linux"):
-			os.system("ps aux | awk '/chrome/ { print $2 } ' | xargs kill -9")
+		#清除多余浏览器进程
+		try:
+			if(sysstr =="Windows"):
+				os.system("taskkill /f /IM chrome*")
+			elif(sysstr =="Linux"):
+				os.system("ps aux | awk '/chrome/ { print $2 } ' | xargs kill -9")
+		except:
+			pass
