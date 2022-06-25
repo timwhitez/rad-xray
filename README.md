@@ -5,16 +5,18 @@ xray+rad批量主动扫描
 
 ## 社区版用户
 
-url一行一个放url.txt中，和rad放同文件夹
+url一行一个放url.txt中，和rad放同文件夹（默认）
+或者 -f参数指定使用的目标文件，文件格式同上
 
 xray开启监听，
 
+```shell
 ./xray webscan --listen 127.0.0.1:7777 --html-output report__datetime__.html
-
+```
 运行py
-
+```shell
 python3 rad+xray.py
-
+```
 注意：单个任务结束后会kill所有的chrome进程
 
 ## 高级版用户
@@ -24,9 +26,9 @@ url一行一个放url.txt中
 browserscan.py和xray.exe和rad.exe放同一文件夹
 
 运行py:
-
+```shell
 python3 browserscan.py
-
+```
 
 ## etc
 1. 开源的样本大部分可能已经无法免杀,需要自行修改
